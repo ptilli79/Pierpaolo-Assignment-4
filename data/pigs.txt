@@ -1,4 +1,0 @@
-Corkey,ROWDY
-Penny,PEACEFUL
-Bartholomew,TROUBLE
-Rocky,TROUBLE
