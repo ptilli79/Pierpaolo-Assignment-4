@@ -21,22 +21,21 @@ public class SortingApplication {
 		FileWriterService createFile = new FileWriterService();
 		FileReaderService csvReader = new FileReaderService() ;
 		String workingDir = System.getProperty("user.dir");
-		String workingDir1=workingDir;
 		
+		workingDir=workingDir+"/data/student-master-list.csv";
 
-			workingDir=workingDir+"/data/student-master-list.csv";
-
-			System.out.println("File full path: "+workingDir+"+\nOpening file reader....");
-			students=csvReader.createStudents(workingDir);
+		System.out.println("File full path: "+workingDir+"+\nOpening file reader....");
+		students=csvReader.createStudents(workingDir);
 			
-			Arrays.sort(students);			
-			//workingDir1 = System.getProperty("user.dir");
+		Arrays.sort(students);			
+		//workingDir1 = System.getProperty("user.dir");
 			
-			createFile.writeFiles(workingDir1,students,csvReader.getHeader(workingDir));
+		createFile.writeFiles(System.getProperty("user.dir"),students,csvReader.getHeader(workingDir));
 			
-			System.out.println("Output files directory --> "+workingDir+"/output/");
+			
+		System.out.println("Output files directory --> "+System.getProperty("user.dir")+"/output/");
 
 		}
 
-	}
+}
 

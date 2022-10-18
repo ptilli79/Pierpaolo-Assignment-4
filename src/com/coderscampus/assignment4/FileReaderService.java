@@ -18,15 +18,12 @@ public class FileReaderService {
 		String[] arr;
 		
 		fileReader = new BufferedReader(new FileReader(workingDir));	
-//		lnr = new LineNumberReader(fileReader);
-		//line = "";
 		i=0;
 		String[] str_aux;
 		System.out.println("Reading....");
 		while (((line = fileReader.readLine()) != null)) {
 			arr=line.split(",");
 			if (i > 0) {
-				//headerFile=line;
 				str_aux = arr[2].split(" ");	
 				students[i-1] = new Student(arr,str_aux[0]);
 			}
