@@ -31,7 +31,6 @@ public class FileWriterService {
 			}
 			else {
 			writer[2].write(student.getStudentId()+","+student.getStudentName()+","+student.getStudentCourse()+","+student.getStudentGrade()+"\n");
-			
 			}
 		
 		}
