@@ -35,6 +35,17 @@ public class FileReaderService {
 		return students;
 	}
 	
+	public String getHeader (String workingDir) throws IOException{
+		fileReader = new BufferedReader(new FileReader(workingDir));	
+		System.out.println("Extracting header....");
+		if (((line = fileReader.readLine()) != null)) {
+			return line;
+		}	
+		else {
+			return null;
+		}
+	}
+	
 	
 	
 

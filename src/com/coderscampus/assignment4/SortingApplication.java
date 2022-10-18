@@ -19,24 +19,20 @@ public class SortingApplication {
 		//BufferedReader fileReader = null;
 		Student[] students = new Student[100]; //100 students in csv file, one per row (+ header row)
 		FileWriterService createFile = new FileWriterService();
-		String headerFile=null; //variable to save header of file "*.csv"
 		FileReaderService csvReader = new FileReaderService() ;
+		String workingDir = System.getProperty("user.dir");
+		String workingDir1=workingDir;
 		
-//		try { 
-			//File f = new File(dataPath(""), "/image1.jpg");
-			String workingDir = System.getProperty("user.dir");
+
 			workingDir=workingDir+"/data/student-master-list.csv";
-			//fileReader = new BufferedReader(new FileReader("C:/Users/pierp/OneDrive/Documentos/MyRepository/PreloadBuild/Output/assignment3-data.txt"));
-//			String line = "";
 
 			System.out.println("File full path: "+workingDir+"+\nOpening file reader....");
-			headerFile="Student ID,	Student Name,	Course,	Grade";
 			students=csvReader.createStudents(workingDir);
 			
 			Arrays.sort(students);			
-			workingDir = System.getProperty("user.dir");
+			//workingDir1 = System.getProperty("user.dir");
 			
-			createFile.writeFiles(workingDir,students,headerFile);
+			createFile.writeFiles(workingDir1,students,csvReader.getHeader(workingDir));
 			
 			System.out.println("Output files directory --> "+workingDir+"/output/");
 
